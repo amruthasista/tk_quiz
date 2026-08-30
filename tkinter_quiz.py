@@ -35,10 +35,10 @@ questions=[
 #Quiz Options
 
 options=[
-    'blue','pink','purple','red',
-    'George Washington','Donald Trump','Obama','Indira Gandhi',
-    'Mars','Saturn','Uranus','Jupiter',
-    'Oxygen','Carbon dioxide','Nitrogen','Carbon Monoxide',
+    ['blue','pink','purple','red'],
+    ['George Washington','Donald Trump','Obama','Indira Gandhi'],
+    ['Mars','Saturn','Uranus','Jupiter'],
+    ['Oxygen','Carbon dioxide','Nitrogen','Carbon Monoxide'],
 ]
 #this is a list containing options for each question
 
@@ -145,7 +145,7 @@ def check_answer():
 
     current += 1
 
-    if current<len(question):
+    if current<len(questions):
         show_question()
     else:
         question.config(
@@ -153,9 +153,9 @@ def check_answer():
         )
 
         option1.pack_forget()
-        option1.pack_forget()
-        option1.pack_forget()
-        option1.pack_forget()
+        option2.pack_forget()
+        option3.pack_forget()
+        option4.pack_forget()
         button.pack_forget()
                
     result.config(
@@ -165,7 +165,7 @@ def check_answer():
 question=tk.Label(
     quiz,
     text='',
-    font=('Ariel',16),
+    font=('Arial',16),
     wraplength=450
 )
 
@@ -201,7 +201,7 @@ option4.pack(anchor='w',padx=100)
 
 button=tk.Button(
     quiz,
-    text='Sumbit',
+    text='Sumbmit',
     command=check_answer
 )
 
@@ -210,7 +210,7 @@ button.pack(pady=25)
 result=tk.Label(
     quiz,
     text='',
-    font=('Ariel',16),
+    font=('Arial',16),
 )
 
 result.pack()
